@@ -34,8 +34,8 @@ app.post('/', async (req, res) => {
             res.end(twiml.toString());
         }
     } else {
-        twiml.message('No valid image found in the message.');
-        res.writeHead(400, { 'Content-Type': 'text/xml' });
+        twiml.message(`No valid image found in the message.\n\nPlease send an image to print.\n\nIn case you want to check our source-code, open https://twil.io/whatsapp-photo-printer`);
+        res.writeHead(200, { 'Content-Type': 'text/xml' });
         res.end(twiml.toString());
     }
 });
